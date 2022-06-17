@@ -11,5 +11,6 @@ while (val <= 10) {
     ++val; // add 1 to val
 }
 std::cout << "Sum of 1 to 10 inclusive is " << sum << std::endl;
+system("pause");
 return 0;
 }
