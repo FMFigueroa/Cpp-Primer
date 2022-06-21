@@ -27,7 +27,7 @@ int units_sold(0);
 /*
 Note:
   Cuando se usa con variables de tipo incorporado, esta forma de inicialización tiene una
- propiedad importante: el compilador no nos permitirá enumerar las variables de inicialización                 de
+ propiedad importante: el compilador no nos permitirá enumerar las variables de inicialización
  escritas si el inicializador puede conducir a la pérdida de información:
  */
 //Exameple:
