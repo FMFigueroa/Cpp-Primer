@@ -1,6 +1,6 @@
 # C++ Primer
 
-## Chapter 1 - Getting Started
+## [Chapter 1 - Getting Started](https://github.com/FMFigueroa/Cpp-Primer/tree/main/Chapter%201)
 
 - Writing a Simple C++ Program
 - A First Look at Input/Output
@@ -9,7 +9,7 @@
 - Introducing Classes
 - The Bookstore Program
 
-## Chapter 2 - Variables and Basic Types
+## [Chapter 2 - Variables and Basic Types](https://github.com/FMFigueroa/Cpp-Primer/tree/main/Chapter%202)
 
 - Primitive Built-in Types
 - Variables
