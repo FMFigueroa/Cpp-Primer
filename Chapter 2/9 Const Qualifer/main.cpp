@@ -39,4 +39,84 @@ int main ()
         int &r2 = ci; // error: referencia no constante a un objeto constante
    */
 
+    //Inicialización y Referencias a const
+
+    //(Caso 1) - referencia const inicializada con un objeto const
+    const int ci = 1024;
+    const int &rci = ci; // ok: tanto la referencia como el objeto subyacente son constantes
+
+    //(Caso 2) - referencia const inicializada con un objeto no-const
+    int i = 42;
+    const int &r1 = i; // we can bind a const int & to a plain int object
+    const int &r2 = 24; // ok: r2 is a reference to const
+    const int &r3 = r1 * 2; // ok: r3 is a reference to const
+
+    //(Caso 3) - referencia no-const inicializada con un objeto const
+    //no valid
+    int r = 24;
+    int &r4 = r * 2 ; // error: r4 is a plain, nonconst reference
+
+    // (Caso 4) - Objeto Temporal
+    double  dval = 3.14;
+    const int temp = dval;
+    const int &rdval = temp;
+
+    //(Caso 5) - Modificando un Objeto no const a través  de una referencia (const y no-const)
+    int x = 25;
+    int &x1 = x ; // x1 bound to x
+    const int &x2 = x ; // x2 also bound to x; but cannot be used to change x
+    x1 = 0; // r1 is not const; x is now 0
+    x2 = 0;  // error: r2 is a reference to const
+
+    //===========================================================================//
+    //========================== Punteros y const ===============================//
+    //===========================================================================//
+    /*
+        Al igual que con las referencias, podemos definir punteros que apunten 
+        a tipos constantes o no constantes.
+        Al igual que una referencia a const, 
+        un puntero a const no se puede usar para cambiar el objeto al que apunta el puntero. 
+        Podemos almacenar la dirección de un objeto const solo en un puntero a const: 
+    */
+
+
+    //Caso puntero const referenciando Objeto const
+    const double pi = 3.14; // pi is const; its value may not be changed
+    double *ptr = &pi; // error: ptr is a plain pointer
+    const double *cptr = &pi; // ok: cptr may point to a double that is const
+    *cptr = 42; // error: cannot assign to *cptr
+
+
+    //Caso puntero const referenciando con Objeto no-cont
+    double dval = 3.14; // dval is a double; its value can be changed
+    cptr = &dval; // ok: but can’t change dval through cptr
+
+    // const Pointers (*const name_pointer)
+    /*
+
+    A diferencia de las referencias, los punteros son objetos. 
+    Por lo tanto, como con cualquier otro tipo de objeto, 
+    podemos tener un puntero que sea en sí mismo constante. 
+    Como cualquier otro objeto const, un puntero const debe inicializarse y,
+    una vez inicializado, su valor (es decir, la dirección que contiene) no puede cambiarse.
+    Indicamos que el puntero es const poniendo la const después del *.
+    Esta ubicación indica que es el puntero, no el apuntado
+    tipo, que es const:
+
+    */  
+    int errNumb = 0;
+    int *const curErr = &errNumb; // curErr will always point to errNumb
+    //podemos usar este puntero para cambiar el valor al que apunta.
+
+    // if the object to which curErr points (i.e., errNumb) is nonzero
+    if (*curErr) {
+        *curErr = 0; // ok: reset the value of the object to which curErr is bound
+    }
+
+    const double pi = 3.14159;
+    const double *const pip = &pi; // pip is a const pointer to a const object
+    //No podemos usar este puntero para cambiar el valor del objeto al que apunta, 
+    //ni la direccion almacenada a la que apunta, en este caso el objeto pi .
+    *pip = 2.72; // error: pip is a pointer to const
 }
+
