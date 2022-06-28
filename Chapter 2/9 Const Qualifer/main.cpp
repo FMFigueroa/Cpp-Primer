@@ -133,7 +133,12 @@ int main ()
     const int *const p3 = p2; // right-most const is top-level, left-most is not
     const int &r = ci; // const in reference types is always low-level
 
-
+    // Podemos convertir un nonconst a const pero no al revés:
+    int *p = p3; // error: p3 has a low-level const but p doesn’t
+    p2 = p3; // ok: p2 has the same low-level const qualification as p3
+    p2 = &i; // ok: we can convert int* to const int*
+    int &r = ci; // error: can’t bind an ordinary int& to a const int object
+    const int &r2 = i; // ok: can bind const int& to plain int
 
 
 
