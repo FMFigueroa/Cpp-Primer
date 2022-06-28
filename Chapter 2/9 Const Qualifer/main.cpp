@@ -140,7 +140,11 @@ int main ()
     int &r = ci; // error: can’t bind an ordinary int& to a const int object
     const int &r2 = i; // ok: can bind const int& to plain int
 
-
+    //constexpr y expresiones constantes
+    const int max_files = 20; // max_files is a constant expression
+    const int limit = max_files + 1; // limit is a constant expression
+    int staff_size = 27; // staff_size is not a constant expression
+    const int sz = get_size(); // sz is not a constant expression
 
 }
 
