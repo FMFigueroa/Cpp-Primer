@@ -146,5 +146,10 @@ int main ()
     int staff_size = 27; // staff_size is not a constant expression
     const int sz = get_size(); // sz is not a constant expression
 
+    //Variables constexpr
+    constexpr int mf = 20; // 20 is a constant expression
+    constexpr int limit = mf + 1; // mf + 1 is a constant expression
+    constexpr int sz = size(); // ok only if size is a constexpr function
+
 }
 
