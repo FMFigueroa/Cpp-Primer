@@ -150,6 +150,33 @@ int main ()
     constexpr int mf = 20; // 20 is a constant expression
     constexpr int limit = mf + 1; // mf + 1 is a constant expression
     constexpr int sz = size(); // ok only if size is a constexpr function
+    //Podemos usar funciones constexpr en el inicializador de una variable constexpr.
 
-}
+    //Punteros y constexpr
+    /*
+        Es importante comprender que cuando definimos un puntero en una
+        declaración constexpr, el especificador constexpr se aplica al puntero,
+        no al tipo al que apunta el puntero:
+    */
+    const int *p = nullptr; // p is a pointer to a const int
+    constexpr int *q = nullptr; // q is a const pointer to int
+
+    /*
+        A pesar de las apariencias, los tipos de p y q son bastante diferentes;
+        p es un puntero a constante, mientras que q es un puntero constante.
+        La diferencia es consecuencia del hecho de que constexpr impone 
+        una const de nivel superior en los objetos que define.
+        Como cualquier otro puntero constante, un puntero constexpr puede 
+        apuntar a un tipo const o nonconst:
+    */
+   constexpr int *np = nullptr; // np is a constant pointer to int that is null
+    int j = 0;
+    constexpr int i = 42; // type of i is const int
+    // i and j must be defined outside any function
+    constexpr const int *p = &i; // p is a constant pointer to the const int i
+    constexpr int *p1 = &j; // p1 is a constant pointer to the int j
+
+
+}   
+
 
