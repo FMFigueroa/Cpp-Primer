@@ -206,7 +206,53 @@ int main ()
         cstr como un puntero a un char constante en lugar de un puntero constante a char.
     */
 
-   
+    //El especificador de tipo automático
+    // auto le dice al compilador que deduzca el tipo del inicializador
+    //por el tipo de las variables involucrdas en la inicializacion de la variable item.
+    //en este caso val1 y val2 el compilador induce el tipo por estas variables, por
+    //ello es se debe inicializar la variable cuando la definimos de tipo auto.
+    auto item = val1 + val2; // item initialized to the result of val1 + val2
+
+    //para hacer multiples declaraciones con auto debe haber consistencia entre los tipos
+    auto i = 0, *p = &i; // ok: i is int and p is a pointer to int
+    auto sz = 0, pi = 3.14; // error: inconsistent types for sz and pi
+
+    //Tipos Compuestos, const, and auto
+    /*
+    El tipo que el compilador infiere para auto no siempre es exactamente 
+    el mismo que el tipo del inicializador.
+    En particular, cuando usamos una referencia como inicializador, 
+    el inicializador es el objeto correspondiente. 
+    El compilador usa el tipo de ese objeto para la deducción del tipo de auto:
+    */
+
+    int i = 0, &r = i;
+    auto a = r; // a is an int (r is an alias for i, which has type int)
+
+    /*
+    En segundo lugar, auto normalmente ignora las constantes de nivel superior.
+    Como es habitual en las inicializaciones, las constantes de bajo nivel,
+     como cuando un inicializador es un puntero a constante, se mantienen:
+    */
+    const int ci = i, &cr = ci;
+    auto b = ci; // b is an int (top-level const in ci is dropped)
+    auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
+    auto d = &i; // d is an int* (& of an int object is int*)
+    auto e = &ci; // e is const int* (& of a const object is low-level const)
+
+    //Si queremos que el tipo deducido tenga una constante de nivel superior,
+    // debemos decirlo explícitamente:
+    const auto f = ci; // deduced type of ci is int; f has type const int
+
+    //También podemos especificar que queremos una referencia al tipo deducido automáticamente.
+    // Las reglas de inicialización normales aún se aplican:
+    auto &g = ci; // g is a const int& that is bound to ci
+    auto &h = 42; // error: we can’t bind a plain reference to a literal
+    const auto &j = 42; // ok: we can bind a const reference to a literal
+
+
+
+
 }   
 
 
