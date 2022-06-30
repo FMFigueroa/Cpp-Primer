@@ -250,6 +250,12 @@ int main ()
     auto &h = 42; // error: we can’t bind a plain reference to a literal
     const auto &j = 42; // ok: we can bind a const reference to a literal
 
+    //tipos autodeducidos:
+    auto k = ci, &l = i; // k is int; l is int&
+    auto &m = ci, *p = &ci; // m is a const int&; p is a pointer to const int
+    // error: type deduced from i is int; type deduced from &ci is const int
+    auto &n = i, *p2 = &ci;
+
 
 
 
