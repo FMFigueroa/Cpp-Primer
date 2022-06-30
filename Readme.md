@@ -18,7 +18,7 @@
 - Dealing with Types
 - Defining Our Own Data Structures
 
-## Chapter 3 - Strings, Vectors and Arrays
+## [Chapter 3 - Strings, Vectors and Arrays](https://github.com/FMFigueroa/Cpp-Primer/tree/main/Chapter%203)
 
 - Namespace using Declarations
 - Library string Type
