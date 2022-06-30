@@ -169,14 +169,44 @@ int main ()
         Como cualquier otro puntero constante, un puntero constexpr puede 
         apuntar a un tipo const o nonconst:
     */
-   constexpr int *np = nullptr; // np is a constant pointer to int that is null
+    constexpr int *np = nullptr; // np is a constant pointer to int that is null
     int j = 0;
     constexpr int i = 42; // type of i is const int
     // i and j must be defined outside any function
     constexpr const int *p = &i; // p is a constant pointer to the const int i
     constexpr int *p1 = &j; // p1 is a constant pointer to the int j
 
+    // Tratando con types
+    /*
+        A medida que nuestros programas se vuelven más complicados,
+        veremos que los tipos que usamos también se vuelven más complicados.
+        Los alias de tipo nos permiten simplificar las definiciones de tipo complicadas,
+        haciendo que esos tipos sean más fáciles de usar. 
+    */
+    //Type Aliases with typedef:
+    typedef double wages; // wages is a synonym for double
+    typedef wages base, *p; // base is a synonym for double, p for double*
+    
+    //Nuevo standart
+    using SI = Sales_item; // SI is a synonym for Sales_item
 
+    //Un alias de tipo es un nombre de tipo que puede aparecer dondequiera:
+    wages hourly, weekly; // same as double hourly, weekly;
+    SI item; // same as Sales_item item
+
+    //Pointers, const, and Type Aliases
+    typedef char *pstring;
+    const pstring cstr = 0; // cstr is a constant pointer to char
+    const pstring *ps; // ps is a pointer to a constant pointer to char
+    // es incorrecto interpretar una declaración que usa un alias de tipo
+    //  y reemplazarlo conceptualmente el alias con su tipo correspondiente:
+    const char *cstr = 0; // wrong interpretation of const pstring cstr
+    /*
+        En este caso, const char es el tipo base. Esta reescritura declara 
+        cstr como un puntero a un char constante en lugar de un puntero constante a char.
+    */
+
+   
 }   
 
 
