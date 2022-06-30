@@ -256,9 +256,39 @@ int main ()
     // error: type deduced from i is int; type deduced from &ci is const int
     auto &n = i, *p2 = &ci;
 
+    //El especificador de tipo decltype
+    /*
+    A veces queremos definir una variable con un tipo 
+    que el compilador deduce de una expresión pero 
+    no queremos usar esa expresión para inicializar la variable.
+    decltype devuelve el tipo de su operando. 
+    El compilador analiza la expresión para determinar su tipo 
+    pero no evalúa la expresión,  le da a sum el mismo tipo 
+    que el tipo que devolvería si llamaramos a f.:
+    */
+   decltype(f()) sum = x; // sum has whatever type f returns
 
+   //diferencia entre auto y decltype:
+   //decltype devuelve el tipo de esa variable, 
+   //incluidas las constantes de nivel superior y las referencias:
 
+    const int ci = 0, &cj = ci;
+    decltype(ci) x = 0; // x has type const int
+    decltype(cj) y = x; // y has type const int& and is bound to x
+    decltype(cj) z; // error: z is a reference and must be initialized
 
+    //decltype y referencias
+    //decltype devuelve un tipo de referencia para expresiones 
+    //que producen objetos que pueden estar en el lado izquierdo de la asignación:
+
+    // decltype of an expression can be a reference type
+    int i = 42, *p = &i, &r = i;
+    decltype(r + 0) b; // ok: addition yields an int; b is an (uninitialized) int
+    decltype(*p) c; // error: c is int& and must be initialized
+
+    // decltype of a parenthesized variable is always a reference
+    decltype((i)) d; // error: d is int& and must be initialized
+    decltype(i) e; // ok: e is an (uninitialized) int
 }   
 
 
