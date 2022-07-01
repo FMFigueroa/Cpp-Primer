@@ -17,4 +17,4 @@ Las matrices y los punteros a los elementos de la matriz proporcionan análogos 
 
 ### Library Names and Headers
 
-![](./imgs/table A.png)
+![](./imgs/table_a.png)
