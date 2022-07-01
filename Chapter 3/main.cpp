@@ -56,7 +56,7 @@ return 0;
     }
     
 */
-
+/*
 #include <iostream>
 #include <string>
 
@@ -75,19 +75,27 @@ system("pause");
 return 0;
 
 }
+*/
 
 //Lectura de un número desconocido de cadenas
-/*
-    #include <iostream>
-    #include <string>
 
-    using namespace std;
+#include <iostream>
+#include <string>
 
-    int main()
-    {
-    string word;
-    while (cin >> word)           // read until end-of-file
-    cout << word << endl;       // write each word followed by a new line
-    return 0;
-    }
-*/
+using namespace std;
+
+int main()
+{
+    //string word;
+    //while (cin >> word)      // read until end-of-file.
+    //cout << word << endl;    // write each word followed by a new line.
+
+string line;
+// read input a line at a time until end-of-file
+while (getline(cin, line))
+cout << line << endl;
+system("pause");
+return 0;
+
+}
+
