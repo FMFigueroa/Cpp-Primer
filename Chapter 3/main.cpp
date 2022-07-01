@@ -92,9 +92,16 @@ int main()
 
 string line;
 // read input a line at a time until end-of-file
-while (getline(cin, line))
-cout << line << endl;
-system("pause");
+while (getline(cin, line)){
+    if (!line.empty()){
+        cout << line << endl;
+        system("pause");
+    }else{
+         //La cadena vacía
+        cout<<"La cadena esta vacia"<<endl;
+    }
+}
+
 return 0;
 
 }
