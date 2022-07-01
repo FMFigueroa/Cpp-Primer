@@ -1,9 +1,9 @@
-# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\main.cpp"
-# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3//"
+# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String\\main.cpp"
+# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\main.cpp"
-# 82 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\main.cpp"
+# 1 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String\\main.cpp"
+# 41 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String\\main.cpp"
 # 1 "c:\\mingw\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\iostream" 1 3
 # 36 "c:\\mingw\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\iostream" 3
        
@@ -24015,11 +24015,11 @@ namespace std
 
 
 }
-# 83 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\main.cpp" 2
+# 42 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String\\main.cpp" 2
 
 
 
-# 85 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\main.cpp"
+# 44 "C:\\Users\\FFigueroa\\Desktop\\C++Primer\\Chapter 3\\2 String\\main.cpp"
 using namespace std;
 
 int main()

@@ -65,3 +65,12 @@ return 0;
 
 }
 
+// Comparando cadenas (==, !=, <, <=, >, >=)
+/*
+    string str = "Hello";
+    string phrase = "Hello World";
+    string slang = "Hiya";
+
+    Usando la regla 1, vemos que str es menor que phrase. 
+    Aplicando la regla 2, vemos que slang es mayor que str y phrase.
+*/
