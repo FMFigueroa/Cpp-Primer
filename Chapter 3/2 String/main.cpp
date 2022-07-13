@@ -74,3 +74,44 @@ return 0;
     Usando la regla 1, vemos que str es menor que phrase. 
     Aplicando la regla 2, vemos que slang es mayor que str y phrase.
 */
+
+//- ====== Asignación de cadenas ====== -//
+//En el caso de las cadenas, podemos asignar un objeto de cadena a otro:
+//string st1(10, ’c’), st2; // st1 is cccccccccc; st2 is an empty string
+//st1 = st2; // assignment: replace contents of st1 with a copy of st2
+// both st1 and st2 are now the empty string
+
+//- ===== Agregar dos cadenas ====== -//
+/*
+    string s1 = "hello, ", s2 = "world\n";
+    string s3 = s1 + s2; // s3 is hello, world\n
+    s1 += s2; // equivalent to s1 = s1 + s2
+*/
+
+//- ===== Adición de literales y cadenas =====//c
+/*La biblioteca de cadenas nos permite convertir, 
+literales de caracteres y literales de cadenas de caracteres en cadenas */
+/*
+    string s1 = "hello", s2 = "world"; // no punctuation in s1 or s2
+    string s3 = s1 + ", " + s2 + ’\n’;
+*/
+
+/*
+    Cuando mezclamos string y  literales (cadena de caracteres o  caracteres),
+    al menos un operando para cada operador + debe ser de tipo string:
+*/
+
+/*
+    string s4 = s1 + ", "; // ok: adding a string and a literal
+    string s5 = ("hello" + ", "); // error: no string operand
+    string s6 = s1 + ", " + "world"; // ok: each + has a string operand
+    string s7 = ("hello" + ", ") + s2; // error: can’t add string literals
+*/
+
+/*
+    //Note:
+     Por razones históricas y por compatibilidad con C,
+     los literales de cadena no son cadenas de biblioteca estándar.
+     Es importante recordar que estos tipos difieren 
+     cuando usa cadenas literales y cadenas de biblioteca.
+*/
