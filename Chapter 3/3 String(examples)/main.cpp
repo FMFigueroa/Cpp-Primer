@@ -43,7 +43,26 @@ int main(){
     str[0] = toupper(str[5]); // assign a new value to the first character in s
     cout << str << endl; // print the first character in str
 
+    //Ejemplo 5 (Accediendo a un caracter especifico con el operador de subindice [] y ciclo for):
+    string txt2("hello world!!!");
+    // process characters in s until we run out of characters or we hit a whitespace
+    for (decltype(txt2.size()) index = 0; index != txt2.size() && !isspace(txt2[index]); ++index)
+        txt2[index] = toupper(txt2[index]); // capitalize the current character
+    cout << txt2 << endl;
+
+
+    //Ejemplo 6 (Usando el subindicie para un random acceso) 
+    const string hexdigits = "0123456789ABCDEF"; // possible hex digits
+    cout << "Enter a series of numbers between 0 and 15"<< "separated by spaces. Hit ENTER when finished: "<< endl;
+    string result; // will hold the resulting hexify’d string
+    string::size_type n; // hold numbers from the input
+    while (cin >> n)
+        if (n < hexdigits.size()) // ignore invalid input
+            result += hexdigits[n]; // fetch the indicated hex digit
+    cout << "Your hex number is: " << result << endl;
+
+
 
     getch();
-    return 0;
+    return 0;  
 };
