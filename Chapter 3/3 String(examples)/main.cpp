@@ -32,6 +32,14 @@ int main(){
 
     cout << punct_cnt << " punctuation characters in " << s << endl;
 
+    //Ejemplo 3 (Recorriendo cada caracter de la cadena para cambiar caracteres):
+    string txt("Hello World!!!");
+    // convert s to uppercase
+    for (auto &ref : txt) // for every char in s (note: c is a reference)
+        ref = toupper(ref); // c is a reference, so the assignment changes the char in s
+    cout << txt << endl;
+
+
 
     getch();
     return 0;
