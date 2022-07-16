@@ -5,7 +5,6 @@
 
 
 using namespace std;
-using std::vector;
 
 int main() {
     
