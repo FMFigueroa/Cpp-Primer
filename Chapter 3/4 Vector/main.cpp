@@ -39,10 +39,18 @@ int main() {
     vector<int> ivec3(10); // ten elements, each initialized to 0
     vector<string> svec4(10); // ten elements, each an empty string
     //vector<int> v8 = 10; // error: must use direct initialization to supply a size
-    
 
+    //Uso adecuado de llaves o parentesis con type int:
+    vector<int> v9(10); // v9 has ten elements with value 0.
+    vector<int> v10{10}; // v10 has one element with value 10.
+    vector<int> v11(10, 1); // v11 has ten elements with value 1.
+    vector<int> v12{10, 1}; // v12 has two elements with values 10 and 1.
 
-
+    //Uso adecuado de llaves o parentesis con type string:
+    vector<string> v13{"hi"}; // list initialization: v13 has one element
+    //vector<string> v14("hi"); error: can’t construct a vector from a string literal
+    vector<string> v15{10}; // v15 has ten default-initialized elements
+    vector<string> v16{10, "hi"}; // v16 has ten elements with value "hi"
 
 
     getch();
