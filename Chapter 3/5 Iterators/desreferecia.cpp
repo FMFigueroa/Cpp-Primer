@@ -20,6 +20,14 @@ int main()
     for (auto it1 = text2.cbegin(); it1 != text2.cend() && !it1->empty(); ++it1)
         cout << *it1 << endl;
 
+    /*
+    Vale la pena señalar que debido a que el ciclo lee pero no escribe en los elementos del texto,
+    usamos cbegin y cend para controlar la iteración.
+
+    //Note begin() and end() we use it to control the iteration, when we must read and write.
+    //Note cbegin() and cend() we use it to control the iteration, when we only have to read.
+    */
+
     getch();
     return 0;
 }

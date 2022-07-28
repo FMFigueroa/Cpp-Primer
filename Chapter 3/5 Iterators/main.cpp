@@ -27,6 +27,9 @@ int main()
       *it = toupper(*it); // capitalize the current character
    cout << s << endl;     // SOME string
 
+   // Note begin() and end() we use it to control the iteration, when we must read and write.
+   // Note cbegin() and cend() we use it to control the iteration, when we only have to read.
+
    getch();
    return 0;
 }
